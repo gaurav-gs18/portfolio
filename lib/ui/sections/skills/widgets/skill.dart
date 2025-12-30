@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart';
+
+import '../../../../models/skill.dart';
+
+class SkillWidget extends StatelessWidget {
+  const SkillWidget({
+    Key? key,
+    required this.skill,
+  }) : super(key: key);
+
+  final Skill skill;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          skill.name,
+          style: Theme.of(context)
+              .textTheme
+              .displayLarge
+              ?.copyWith(color: Colors.white),
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        Container(
+          height: 7,
+          width: double.maxFinite,
+          alignment: AlignmentDirectional.centerStart,
+          decoration: BoxDecoration(
+            color: Color(skill.color).withOpacity(.2),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: FractionallySizedBox(
+            widthFactor: skill.percentage / 100,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(skill.color),
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}

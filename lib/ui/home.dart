@@ -19,7 +19,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
   final User _userData = DataService.getData();
-  
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,28 +36,28 @@ class _HomePageState extends State<HomePage> {
         body: SingleChildScrollView(
           controller: _scrollController,
           physics: const BouncingScrollPhysics(),
-          child: Container(
-            alignment: AlignmentDirectional.centerStart,
-            padding: const EdgeInsetsDirectional.only(
-              start: 50,
-              top: 50,
+                child: Container(
+                  alignment: AlignmentDirectional.centerStart,
+                  padding: const EdgeInsetsDirectional.only(
+                    start: 50,
+                    top: 50,
               end: 50,
               bottom: 50,
-            ),
-            child: FractionallySizedBox(
-              widthFactor: .9,
+                  ),
+                  child: FractionallySizedBox(
+                    widthFactor: .9,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                      children: [
                   // About Section
                   const AboutSection(),
                   const SizedBox(height: 40),
 
                   // Experience Section
-                  ExperienceSection(
-                    experiences: _userData.experience,
-                    projects: _userData.projects,
-                  ),
+                        ExperienceSection(
+                          experiences: _userData.experience,
+                          projects: _userData.projects,
+                        ),
                   const SizedBox(height: 40),
 
                   // Skills Section
@@ -69,17 +69,20 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 40),
 
                   // Education Section
-                  EducationSection(
-                    educations: _userData.education,
-                  ),
+                        EducationSection(
+                          educations: _userData.education.where((edu) => 
+                            !edu.degree.toLowerCase().contains('10th') && 
+                            !edu.degree.toLowerCase().contains('12th')
+                          ).toList(),
+                        ),
                   const SizedBox(height: 40),
 
                   // Contact Section
                   const ContactSection(),
                   const SizedBox(height: 30),
-                ],
-              ),
-            ),
+                      ],
+                    ),
+                  ),
           ),
         ),
       ),

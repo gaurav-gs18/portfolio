@@ -17,16 +17,16 @@ class EducationSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SectionHeaderWidget(
-            title: '',
-            subtitle: 'EDUCATION',
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SectionHeaderWidget(
+          title: '',
+          subtitle: 'EDUCATION',
             icon: Icons.school_outlined,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
         ListView.separated(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
@@ -38,13 +38,6 @@ class EducationSection extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: Responsive.getCardTitleSize(context),
-                ),
-              ),
-              subtitle: Text(
-                educations[index].institute,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: Responsive.getBodySize(context),
                 ),
               ),
               trailing: Text(

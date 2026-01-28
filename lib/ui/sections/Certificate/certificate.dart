@@ -93,14 +93,14 @@ class CertificationScreen extends StatelessWidget {
             title: '',
             subtitle: 'CERTIFICATIONS',
             icon: Icons.verified_outlined,
-          ),
+      ),
           const SizedBox(height: 40),
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: certifications.length,
-            itemBuilder: (context, index) {
-              final cert = certifications[index];
+        itemCount: certifications.length,
+        itemBuilder: (context, index) {
+          final cert = certifications[index];
               return _buildCertificationCard(context, theme, cert, index);
             },
           ),
@@ -312,26 +312,26 @@ class CertificationScreen extends StatelessWidget {
                       style: ElevatedButton.styleFrom(
                         backgroundColor: accentColor,
                         padding: EdgeInsets.symmetric(vertical: Responsive.getButtonPadding(context)),
-                        shape: RoundedRectangleBorder(
+            shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12),
                         ),
-                      ),
+            ),
                       child: Text(
                         "Close",
                         style: theme.textTheme.labelLarge?.copyWith(
                           color: Colors.white,
                           fontSize: Responsive.getBodySize(context),
                           fontWeight: FontWeight.bold,
-                        ),
+              ),
                       ),
                     ),
-                  ),
+              ),
                 ],
               ),
             ),
-          ),
-        );
-      },
+            ),
+          );
+        },
     );
   }
 }

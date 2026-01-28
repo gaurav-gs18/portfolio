@@ -45,24 +45,24 @@ class SkillsSection extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 30),
       child: DefaultTabController(
-        length: categories.keys.length,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SectionHeaderWidget(
-              title: '',
+      length: categories.keys.length,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SectionHeaderWidget(
+            title: '',
               subtitle: 'TECH STACKS',
               icon: Icons.build_circle_outlined,
-            ),
+          ),
             const SizedBox(height: 30),
 
-            // Tabs
-            TabBar(
-              isScrollable: true,
+          // Tabs
+          TabBar(
+            isScrollable: true,
               indicatorColor: accentColor,
               indicatorWeight: 3,
               labelColor: accentColor,
-              unselectedLabelColor: Colors.grey,
+            unselectedLabelColor: Colors.grey,
               labelStyle: TextStyle(
                 fontSize: Responsive.getBodySize(context),
                 fontWeight: FontWeight.w600,
@@ -71,19 +71,19 @@ class SkillsSection extends StatelessWidget {
                 fontSize: Responsive.getBodySize(context),
                 fontWeight: FontWeight.w400,
               ),
-              tabs: categories.keys.map((cat) => Tab(text: cat)).toList(),
-            ),
+            tabs: categories.keys.map((cat) => Tab(text: cat)).toList(),
+          ),
             const SizedBox(height: 30),
 
-            // Tab Views
-            SizedBox(
+          // Tab Views
+          SizedBox(
               height: Responsive.isMobile(context) 
                   ? 250 
                   : Responsive.isTablet(context) 
                       ? 280 
                       : 200,
-              child: TabBarView(
-                children: categories.values.map((skills) {
+            child: TabBarView(
+              children: categories.values.map((skills) {
                   return GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -108,13 +108,13 @@ class SkillsSection extends StatelessWidget {
                         skill: skill,
                         icon: skillIcons[skill] ?? Icons.code,
                         accentColor: accentColor,
-                      );
+                    );
                     },
-                  );
-                }).toList(),
-              ),
+                );
+              }).toList(),
             ),
-          ],
+          ),
+        ],
         ),
       ),
     );

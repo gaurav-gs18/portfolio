@@ -22,7 +22,7 @@ class AboutSection extends StatelessWidget {
               flex: 1,
               child: Center(
                 child: Column(
-                  children: [
+        children: [
                     // Professional Profile Picture with Decorative Ring
                     Container(
                       padding: const EdgeInsets.all(6),
@@ -186,13 +186,13 @@ class AboutSection extends StatelessWidget {
                 // Terminal Box for Mobile - Below Content
                 if (isMobile) ...[
                   Container(
-                    padding: const EdgeInsets.all(20),
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: TerminalBox(),
+              padding: const EdgeInsets.all(20),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: TerminalBox(),
                   ),
                 ],
               ],

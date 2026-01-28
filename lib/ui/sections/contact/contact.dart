@@ -1,9 +1,11 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../common/section_header.dart';
 import '../../../utils/responsive.dart';
+import '../../../services/resume_service.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({Key? key}) : super(key: key);
@@ -110,7 +112,7 @@ class ContactSection extends StatelessWidget {
                 icon: const FaIcon(FontAwesomeIcons.github),
                 color: Colors.white,
                 onPressed: () async {
-                  final Uri url = Uri.parse("https://github.com/gauravgit-123");
+                  final Uri url = Uri.parse("https://github.com/gaurav-gs18");
                   if (!await launchUrl(url,
                       mode: LaunchMode.externalApplication)) {
                     throw 'Could not launch $url';
@@ -135,10 +137,136 @@ class ContactSection extends StatelessWidget {
               IconButton(
                 icon: const FaIcon(FontAwesomeIcons.twitter),
                 color: Colors.white,
-                onPressed: () {},
+                onPressed: () async {
+                  final Uri url = Uri.parse("https://x.com/gksingh613982");
+                  if (!await launchUrl(url,
+                      mode: LaunchMode.externalApplication)) {
+                    throw 'Could not launch $url';
+                  }
+                },
               ),
             ],
-          )
+          ),
+          // Download Resume Buttons (only in debug mode)
+          if (!kReleaseMode) ...[
+            const SizedBox(height: 30),
+            Center(
+              child: Column(
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      try {
+                        await ResumeService.generateATSResume();
+                      } catch (e) {
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Error generating resume: $e'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        }
+                      }
+                    },
+                    icon: const Icon(Icons.description, size: 20),
+                    label: Text(
+                      'Download ATS-Optimized Resume',
+                      style: TextStyle(
+                        fontSize: Responsive.getBodySize(context),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.tealAccent[400],
+                      foregroundColor: Colors.black87,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Responsive.isMobile(context) ? 24 : 32,
+                        vertical: Responsive.isMobile(context) ? 14 : 16,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      elevation: 4,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      try {
+                        await ResumeService.generateAndDownloadResume(isUSFormat: false);
+                      } catch (e) {
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Error generating resume: $e'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        }
+                      }
+                    },
+                    icon: const Icon(Icons.download, size: 20),
+                    label: Text(
+                      'Download Resume - Indian Format',
+                      style: TextStyle(
+                        fontSize: Responsive.getBodySize(context),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.tealAccent[400],
+                      foregroundColor: Colors.black87,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Responsive.isMobile(context) ? 24 : 32,
+                        vertical: Responsive.isMobile(context) ? 14 : 16,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      elevation: 4,
+                    ),
+                  ),
+                  const SizedBox(height: 15),
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      try {
+                        await ResumeService.generateAndDownloadResume(isUSFormat: true);
+                      } catch (e) {
+                        if (context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Error generating resume: $e'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                        }
+                      }
+                    },
+                    icon: const Icon(Icons.download, size: 20),
+                    label: Text(
+                      'Download Resume - USA Format',
+                      style: TextStyle(
+                        fontSize: Responsive.getBodySize(context),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.tealAccent[400],
+                      foregroundColor: Colors.black87,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: Responsive.isMobile(context) ? 24 : 32,
+                        vertical: Responsive.isMobile(context) ? 14 : 16,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      elevation: 4,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     );

@@ -79,7 +79,7 @@ final Map<String, dynamic> data = {
   "education": [
     {
       "institute": "Government Engineering College Mainpuri, Uttar Pradesh",
-      "degree": "B-Tech, Electrical Engineering",
+      "degree": "B-Tech, EE",
       "start_at": "2018/08",
       "end_at": "2022/07",
     },
@@ -141,10 +141,10 @@ final Map<String, dynamic> data = {
     {
       "title": "Geo-Intelligence",
       "description":
-          "An advanced fieldwork management application for bank employees built with Flutter using Clean Architecture and Riverpod for state management. The app enables efficient field operations with offline capabilities and location intelligence.\n\n"
+          "An advanced fieldwork management application for bank employees built with Flutter using Clean Architecture and GetX for state management. The app enables efficient field operations with offline capabilities and location intelligence.\n\n"
           "Key features include comprehensive task management and assignment, real-time location tracking and geofencing, offline data synchronization with conflict resolution, detailed field visit reports and documentation, customer data management, route optimization for field visits, and seamless integration with banking systems.\n\n"
-          "The clean architecture ensures the app remains maintainable and scalable while handling complex business logic. Riverpod provides efficient state management for real-time updates and offline data handling. The app significantly improves field employee productivity and operational efficiency.",
-      "technologies": ["Flutter", "Riverpod", "Clean Architecture", "SQLite", "Location Services", "Offline Sync", "Geofencing"]
+          "The clean architecture ensures the app remains maintainable and scalable while handling complex business logic. GetX provides efficient state management for real-time updates and offline data handling. The app significantly improves field employee productivity and operational efficiency.",
+      "technologies": ["Flutter", "GetX", "Clean Architecture", "SQLite", "Location Services", "Offline Sync", "Geofencing"]
     }
   ]
 };

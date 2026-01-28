@@ -182,7 +182,7 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                 title: Text(
                   widget.experiences[index].name ?? "",
                   style: TextStyle(
-                    color: isSelected ? selectedColor : Colors.white,
+                      color: isSelected ? selectedColor : Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: Responsive.getCardTitleSize(context),
                   ),
@@ -190,8 +190,8 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                 subtitle: Text(
                   widget.experiences[index].company ?? "",
                   style: TextStyle(
-                    color: isSelected
-                        ? selectedColor.withOpacity(0.8)
+                      color: isSelected
+                          ? selectedColor.withOpacity(0.8)
                         : Colors.white70,
                     fontSize: Responsive.getBodySize(context),
                   ),

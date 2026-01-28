@@ -24,8 +24,8 @@ class SectionHeaderWidget extends StatelessWidget {
       crossAxisAlignment: isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         if (title.isNotEmpty)
-          Text(
-            title,
+        Text(
+          title,
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.colorScheme.secondary,
               fontSize: Responsive.getSmallSize(context),
@@ -41,12 +41,12 @@ class SectionHeaderWidget extends StatelessWidget {
                 icon,
                 color: Colors.tealAccent[400],
                 size: Responsive.getTitleSize(context) * 1.0,
-              ),
+        ),
               const SizedBox(width: 16),
             ],
             Flexible(
               child: Text(
-                subtitle,
+          subtitle,
                 style: theme.textTheme.displayLarge?.copyWith(
                   color: Colors.white,
                   fontSize: Responsive.getTitleSize(context),

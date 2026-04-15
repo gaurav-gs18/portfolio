@@ -37,8 +37,15 @@ class Experience {
   String? company;
   String? location;
   String? startAt;
+  String? endAt;
 
-  Experience({this.name, this.type, this.company, this.location, this.startAt});
+  Experience(
+      {this.name,
+      this.type,
+      this.company,
+      this.location,
+      this.startAt,
+      this.endAt});
 
   Experience.fromJson(Map<String, dynamic> json) {
     name = json['name'];
@@ -46,6 +53,7 @@ class Experience {
     company = json['company'];
     location = json['location'];
     startAt = json['start_at'];
+    endAt = json['end_at'];
   }
 
   Map<String, dynamic> toJson() {
@@ -55,6 +63,7 @@ class Experience {
     data['company'] = this.company;
     data['location'] = this.location;
     data['start_at'] = this.startAt;
+    data['end_at'] = this.endAt;
     return data;
   }
 }

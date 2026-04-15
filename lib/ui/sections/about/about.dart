@@ -22,7 +22,7 @@ class AboutSection extends StatelessWidget {
               flex: 1,
               child: Center(
                 child: Column(
-        children: [
+                  children: [
                     // Professional Profile Picture with Decorative Ring
                     Container(
                       padding: const EdgeInsets.all(6),
@@ -138,29 +138,29 @@ class AboutSection extends StatelessWidget {
                 Text(
                   "Hi, I'm",
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: Colors.tealAccent[400],
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 1.0,
-                  ),
+                        color: Colors.tealAccent[400],
+                        fontWeight: FontWeight.w600,
+                        letterSpacing: 1.0,
+                      ),
                 ),
                 const SizedBox(height: 16),
                 Text(
                   "Gaurav Kumar",
                   style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0,
-                  ),
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 0,
+                      ),
                   textAlign: isMobile ? TextAlign.center : TextAlign.start,
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  "Flutter Developer | Mobile Engineer",
+                  "Senior Software Developer (Flutter & Android) | Architect",
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontStyle: FontStyle.italic,
-                    color: Colors.tealAccent,
-                    letterSpacing: 0.5,
-                  ),
+                        fontStyle: FontStyle.italic,
+                        color: Colors.tealAccent,
+                        letterSpacing: 0.5,
+                      ),
                   textAlign: isMobile ? TextAlign.center : TextAlign.start,
                 ),
                 const SizedBox(height: 32),
@@ -176,8 +176,8 @@ class AboutSection extends StatelessWidget {
                   "and a collaborative spirit to every project — making technology not only "
                   "functional but also impactful on an international scale.",
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Colors.white70,
-                  ),
+                        color: Colors.white70,
+                      ),
                   textAlign: isMobile ? TextAlign.center : TextAlign.start,
                 ),
 
@@ -186,13 +186,13 @@ class AboutSection extends StatelessWidget {
                 // Terminal Box for Mobile - Below Content
                 if (isMobile) ...[
                   Container(
-              padding: const EdgeInsets.all(20),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: TerminalBox(),
+                    padding: const EdgeInsets.all(20),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: TerminalBox(),
                   ),
                 ],
               ],

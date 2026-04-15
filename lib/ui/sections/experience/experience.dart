@@ -66,9 +66,10 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  
+
                   // Description
-                  if (project.description != null && project.description!.isNotEmpty)
+                  if (project.description != null &&
+                      project.description!.isNotEmpty)
                     Text(
                       "Description",
                       style: TextStyle(
@@ -78,7 +79,8 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                       ),
                     ),
                   const SizedBox(height: 8),
-                  if (project.description != null && project.description!.isNotEmpty)
+                  if (project.description != null &&
+                      project.description!.isNotEmpty)
                     Text(
                       project.description!,
                       style: const TextStyle(
@@ -87,9 +89,10 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                         height: 1.6,
                       ),
                     ),
-                  
+
                   // Technologies
-                  if (project.technologies != null && project.technologies!.isNotEmpty) ...[
+                  if (project.technologies != null &&
+                      project.technologies!.isNotEmpty) ...[
                     const SizedBox(height: 24),
                     Text(
                       "Technologies Used",
@@ -118,9 +121,9 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                       }).toList(),
                     ),
                   ],
-                  
+
                   const SizedBox(height: 20),
-                  
+
                   // Close button
                   SizedBox(
                     width: double.infinity,
@@ -182,7 +185,7 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                 title: Text(
                   widget.experiences[index].name ?? "",
                   style: TextStyle(
-                      color: isSelected ? selectedColor : Colors.white,
+                    color: isSelected ? selectedColor : Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: Responsive.getCardTitleSize(context),
                   ),
@@ -190,14 +193,16 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                 subtitle: Text(
                   widget.experiences[index].company ?? "",
                   style: TextStyle(
-                      color: isSelected
-                          ? selectedColor.withOpacity(0.8)
+                    color: isSelected
+                        ? selectedColor.withOpacity(0.8)
                         : Colors.white70,
                     fontSize: Responsive.getBodySize(context),
                   ),
                 ),
                 trailing: Text(
-                  '${widget.experiences[index].startAt} - Present',
+                  widget.experiences[index].endAt != null
+                      ? '${widget.experiences[index].startAt} - ${widget.experiences[index].endAt}'
+                      : '${widget.experiences[index].startAt} - Present',
                   style: TextStyle(
                     color: isSelected ? selectedColor : Colors.white,
                     fontSize: Responsive.getSmallSize(context),
@@ -261,13 +266,14 @@ class _ProjectCard extends StatefulWidget {
 // Helper function to get icon for each project
 IconData _getProjectIcon(String? projectTitle) {
   if (projectTitle == null) return Icons.code;
-  
+
   final title = projectTitle.toLowerCase();
   if (title.contains('nova')) return Icons.assessment;
   if (title.contains('secure') || title.contains('chat')) return Icons.lock;
   if (title.contains('farming') || title.contains('drogo')) return Icons.eco;
   if (title.contains('pmc')) return Icons.construction;
-  if (title.contains('geo') || title.contains('intelligence')) return Icons.location_on;
+  if (title.contains('geo') || title.contains('intelligence'))
+    return Icons.location_on;
   return Icons.apps;
 }
 
@@ -280,9 +286,8 @@ class _ProjectCardState extends State<_ProjectCard> {
     final cardColor = isSelected
         ? widget.selectedColor.withOpacity(0.15)
         : Colors.black.withOpacity(0.4);
-    final borderColor = isSelected
-        ? widget.selectedColor.withOpacity(0.6)
-        : Colors.transparent;
+    final borderColor =
+        isSelected ? widget.selectedColor.withOpacity(0.6) : Colors.transparent;
 
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),

@@ -40,8 +40,8 @@ final Map<String, dynamic> data = {
     ],
   },
   "statistics": {
-    "experience": 2,
-    "projects": 6,
+    "experience": 3,
+    "projects": 7,
     "clients": 5,
   },
   "skills": [
@@ -98,11 +98,19 @@ final Map<String, dynamic> data = {
   ],
   "experience": [
     {
-      "name": "Mobile Developer",
+      "name": "Senior Software Developer",
+      "type": "Full-time",
+      "company": "Amnet Digital",
+      "location": "Hyderabad, Telangana, India",
+      "start_at": "2026/02/02"
+    },
+    {
+      "name": "Software Developer",
       "type": "Full-time",
       "company": "Tectoro Consulting Private Limited",
       "location": "Hyderabad, Telangana, India",
-      "start_at": "2023/08"
+      "start_at": "2023/08/21",
+      "end_at": "2026/01/30"
     }
   ],
   "projects": [
@@ -110,41 +118,97 @@ final Map<String, dynamic> data = {
       "title": "NovaPlus",
       "description":
           "A comprehensive land survey and inspection management system built with Flutter following Clean Architecture principles. The app uses Riverpod for state management and implements MVVM architecture pattern for better code organization and maintainability.\n\n"
-          "Key features include real-time project tracking, detailed inspection updates with image and video attachments, interactive progress charts and analytics, offline data synchronization, and role-based access control. The application handles complex data flows efficiently with proper separation of concerns between presentation, domain, and data layers.\n\n"
-          "Built with a focus on scalability and performance, the app supports multiple projects simultaneously with seamless navigation and data management. The clean architecture ensures easy testing, maintenance, and future feature additions.",
-      "technologies": ["Flutter", "Riverpod", "Clean Architecture", "MVVM", "REST APIs", "SQLite", "Charts"]
+              "Key features include real-time project tracking, detailed inspection updates with image and video attachments, interactive progress charts and analytics, offline data synchronization, and role-based access control. The application handles complex data flows efficiently with proper separation of concerns between presentation, domain, and data layers.\n\n"
+              "Built with a focus on scalability and performance, the app supports multiple projects simultaneously with seamless navigation and data management. The clean architecture ensures easy testing, maintenance, and future feature additions.",
+      "technologies": [
+        "Flutter",
+        "Riverpod",
+        "Clean Architecture",
+        "MVVM",
+        "REST APIs",
+        "SQLite",
+        "Charts"
+      ]
     },
     {
       "title": "SecureChat",
       "description":
           "An enterprise-grade MDM-based secure messaging and calling application built with Flutter using Clean Architecture and Provider for state management. The app ensures end-to-end encryption for all communications with robust security measures.\n\n"
-          "Features include real-time encrypted messaging, secure voice and video calling capabilities, WebSocket-based instant communication, push notifications via FCM, offline message queuing, and comprehensive message history management. The app implements advanced security protocols to protect sensitive corporate communications.\n\n"
-          "The clean architecture implementation allows for easy integration with various MDM solutions and ensures the app remains maintainable and scalable. All data is stored securely with encryption at rest and in transit.",
-      "technologies": ["Flutter", "Provider", "Clean Architecture", "FCM", "WebSocket", "SQLite", "Encryption", "MDM"]
+              "Features include real-time encrypted messaging, secure voice and video calling capabilities, WebSocket-based instant communication, push notifications via FCM, offline message queuing, and comprehensive message history management. The app implements advanced security protocols to protect sensitive corporate communications.\n\n"
+              "The clean architecture implementation allows for easy integration with various MDM solutions and ensures the app remains maintainable and scalable. All data is stored securely with encryption at rest and in transit.",
+      "technologies": [
+        "Flutter",
+        "Provider",
+        "Clean Architecture",
+        "FCM",
+        "WebSocket",
+        "SQLite",
+        "Encryption",
+        "MDM"
+      ]
     },
     {
       "title": "Drogo Smart Farming",
       "description":
           "A comprehensive agricultural operations management platform built with Flutter following Clean Architecture principles. The app uses Provider for state management and provides end-to-end solutions for modern farming operations.\n\n"
-          "Key features include drone-based pesticide spraying coordination, detailed land survey and mapping with GPS integration, comprehensive farmer data collection and management, real-time project tracking and monitoring, weather integration for optimal farming decisions, and detailed analytics and reporting.\n\n"
-          "The application is published on Google Play Store and serves thousands of farmers. Built with clean architecture to ensure maintainability and scalability, the app handles complex agricultural workflows efficiently. The modular design allows for easy feature additions and updates.",
-      "technologies": ["Flutter", "Provider", "Clean Architecture", "REST APIs", "Google Maps", "GPS", "Firebase"]
+              "Key features include drone-based pesticide spraying coordination, detailed land survey and mapping with GPS integration, comprehensive farmer data collection and management, real-time project tracking and monitoring, weather integration for optimal farming decisions, and detailed analytics and reporting.\n\n"
+              "The application is published on Google Play Store and serves thousands of farmers. Built with clean architecture to ensure maintainability and scalability, the app handles complex agricultural workflows efficiently. The modular design allows for easy feature additions and updates.",
+      "technologies": [
+        "Flutter",
+        "Provider",
+        "Clean Architecture",
+        "REST APIs",
+        "Google Maps",
+        "GPS",
+        "Firebase"
+      ]
     },
     {
       "title": "PMC",
       "description":
           "A robust project management system for construction companies built with Flutter using Clean Architecture and BLoC pattern for state management. The app streamlines construction project workflows and improves team collaboration.\n\n"
-          "Features include comprehensive project tracking and monitoring, detailed inspection updates with photo documentation, real-time progress reporting, task assignment and management, document management and sharing, team collaboration tools, and advanced analytics and insights.\n\n"
-          "The clean architecture implementation ensures separation of business logic from UI, making the codebase highly maintainable and testable. BLoC pattern provides predictable state management and excellent performance even with complex data flows. The app supports multiple construction sites and projects simultaneously.",
-      "technologies": ["Flutter", "BLoC", "Clean Architecture", "REST APIs", "Firebase", "File Management"]
+              "Features include comprehensive project tracking and monitoring, detailed inspection updates with photo documentation, real-time progress reporting, task assignment and management, document management and sharing, team collaboration tools, and advanced analytics and insights.\n\n"
+              "The clean architecture implementation ensures separation of business logic from UI, making the codebase highly maintainable and testable. BLoC pattern provides predictable state management and excellent performance even with complex data flows. The app supports multiple construction sites and projects simultaneously.",
+      "technologies": [
+        "Flutter",
+        "BLoC",
+        "Clean Architecture",
+        "REST APIs",
+        "Firebase",
+        "File Management"
+      ]
     },
     {
       "title": "Geo-Intelligence",
       "description":
           "An advanced fieldwork management application for bank employees built with Flutter using Clean Architecture and GetX for state management. The app enables efficient field operations with offline capabilities and location intelligence.\n\n"
-          "Key features include comprehensive task management and assignment, real-time location tracking and geofencing, offline data synchronization with conflict resolution, detailed field visit reports and documentation, customer data management, route optimization for field visits, and seamless integration with banking systems.\n\n"
-          "The clean architecture ensures the app remains maintainable and scalable while handling complex business logic. GetX provides efficient state management for real-time updates and offline data handling. The app significantly improves field employee productivity and operational efficiency.",
-      "technologies": ["Flutter", "GetX", "Clean Architecture", "SQLite", "Location Services", "Offline Sync", "Geofencing"]
+              "Key features include comprehensive task management and assignment, real-time location tracking and geofencing, offline data synchronization with conflict resolution, detailed field visit reports and documentation, customer data management, route optimization for field visits, and seamless integration with banking systems.\n\n"
+              "The clean architecture ensures the app remains maintainable and scalable while handling complex business logic. GetX provides efficient state management for real-time updates and offline data handling. The app significantly improves field employee productivity and operational efficiency.",
+      "technologies": [
+        "Flutter",
+        "GetX",
+        "Clean Architecture",
+        "SQLite",
+        "Location Services",
+        "Offline Sync",
+        "Geofencing"
+      ]
+    },
+    {
+      "title": "Smart Badge",
+      "description":
+          "A comprehensive time tracking and workforce management application built with Flutter using Clean Architecture and Riverpod for state management. The app accurately tracks actual working hours of laborers including non-productive hours.\n\n"
+              "Key features include real-time work hour tracking with break detection, non-productive time monitoring and reporting, GPS-based attendance marking, detailed timesheets and analytics, offline-first data synchronization, role-based access for managers and workers, and comprehensive reporting dashboards.\n\n"
+              "The application helps organizations optimize workforce productivity by identifying time wastage and improving resource allocation. Built with clean architecture ensuring maintainability, scalability, and robust performance across various network conditions.",
+      "technologies": [
+        "Flutter",
+        "Riverpod",
+        "Clean Architecture",
+        "GPS Tracking",
+        "Offline Sync",
+        "Firebase",
+        "REST APIs"
+      ]
     }
   ]
 };

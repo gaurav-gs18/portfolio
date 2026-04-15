@@ -1,0 +1,89 @@
+name: Deploy Flutter Web
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    permissions:
+      contents: write
+      packages: write
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'zulu'
+          java-version: '21'
+          cache: gradle
+
+      - name: Create .env File
+        run: echo "KEY=${{ secrets.KEY }}" > .env
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.41.1'
+          channel: 'stable'
+          cache: true
+
+      - name: Verify Flutter version
+        run: flutter --version
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build Flutter web
+        run: flutter build web --release  --base-href /portfolio/
+
+      - name: Set up Git
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          if git remote | grep origin; then
+            git remote set-url origin https://github.com/gaurav-gs18/portfolio.git;
+          else
+            git remote add origin https://github.com/gaurav-gs18/portfolio.git;
+          fi
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: build/web
+          allow_empty_commit: true
+          force_orphan: true
+
+      # - name: Build APK and iOS
+      #   run: flutter build apk --release --split-per-abi
+
+      # - name: Build iOS
+      #   run: |
+      #     flutter build ios --no-codesign
+      #     cd build/ios/iphoneos
+      #     mkdir Payload
+      #     cd Payload
+      #     ln -s ../Runner.app
+      #     cd ..
+      #     zip -r app.ipa Payload
+
+      - name: Push to Releases
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: "build/app/outputs/apk/release/*,build/ios/iphoneos/app.ipa"
+          tag: v1.0.${{ github.run_number }}
+          token: ${{ secrets.TOKEN }}
+          body: |
+            - Build ${{ github.run_number }}
+            - Commit ${{ github.sha }}
+            - Branch ${{ github.ref }}
+            - Author ${{ github.actor }}
+          name: v1.0.${{ github.run_number }}
+          prerelease: false
+          draft: false

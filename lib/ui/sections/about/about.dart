@@ -10,7 +10,7 @@ class AboutSection extends StatelessWidget {
     final isMobile = MediaQuery.of(context).size.width < 800;
 
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Flex(
         direction: isMobile ? Axis.vertical : Axis.horizontal,
         crossAxisAlignment:
@@ -165,16 +165,21 @@ class AboutSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
                 Text(
-                  "I build high-quality mobile applications that blend performance, design, "
-                  "and usability. With 3 years of professional experience in Flutter and Android, "
-                  "I specialize in crafting scalable, cross-platform solutions that work seamlessly "
-                  "across iOS and Android devices.\n\n"
-                  "I am passionate about clean architecture, state management, and modern design "
-                  "patterns that ensure maintainable and future-proof code. My focus is on creating "
-                  "apps that deliver real value, from startups to enterprise-level clients.\n\n"
-                  "Beyond coding, I bring strong problem-solving skills, a global mindset, "
-                  "and a collaborative spirit to every project — making technology not only "
-                  "functional but also impactful on an international scale.",
+                  "I'm a Senior Software Developer with "
+                  "${DateTime.now().difference(DateTime(2023, 8, 21)).inDays ~/ 365}+ years "
+                  "of experience building and shipping production apps in Flutter and native "
+                  "Android. I've delivered enterprise products across agriculture, banking, "
+                  "construction, workforce management and secure communications: apps that "
+                  "run in the field, work offline and hold up at scale.\n\n"
+                  "On mobile, I build with Clean Architecture and choose the state management "
+                  "that fits the problem, whether BLoC, Riverpod, Provider or GetX. I've shipped "
+                  "offline-first sync with SQLite, real-time features over WebSockets and FCM, "
+                  "maps and geofencing, payments and MDM-managed enterprise apps. I care about "
+                  "what users never see: predictable state, testable layers and stable releases.\n\n"
+                  "Today I work across the full stack, pairing Flutter apps with .NET 8 APIs, "
+                  "Angular admin portals, PostgreSQL and AWS. I own features end to end, from "
+                  "database design to Play Store and App Store release, and every change goes "
+                  "through UAT before it reaches production.",
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         color: Colors.white70,
                       ),

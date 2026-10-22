@@ -370,7 +370,7 @@ class ResumeService {
           "Implemented non-productive time monitoring, detailed timesheets, analytics dashboards, and role-based access control",
         ],
       },
-      "SecureChat": {
+      "Secure Chat": {
         "summary":
             "Enterprise MDM-based encrypted messaging and calling application",
         "points": [
@@ -397,7 +397,7 @@ class ResumeService {
           "Improved field employee productivity by 50% through route optimization and automated task management",
         ],
       },
-      "NovaPlus": {
+      "Nova Plus": {
         "summary": "Land survey and inspection management system",
         "points": [
           "Developed using Flutter, Riverpod, and MVVM with Clean Architecture for proper separation of concerns",
@@ -415,26 +415,8 @@ class ResumeService {
       },
     };
 
-    // Define project priority order - most recent first
-    final projectPriority = [
-      "Smart Badge",
-      "SecureChat",
-      "Drogo Smart Farming",
-      "Geo-Intelligence",
-      "NovaPlus",
-      "PMC"
-    ];
-
-    // Create a map for quick lookup
-    final projectMap = {
-      for (var project in user.projects) project.title ?? '': project
-    };
-
-    // Return projects in priority order, filtering out nulls
-    return projectPriority
-        .where((title) => projectMap.containsKey(title))
-        .map((title) {
-      final project = projectMap[title]!;
+    // Projects appear in the same order as in data.dart
+    return user.projects.map((project) {
       final desc = project.description ?? '';
       final highlights = projectHighlights[project.title ?? ''] ??
           {

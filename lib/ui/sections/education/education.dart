@@ -15,7 +15,7 @@ class EducationSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -24,9 +24,7 @@ class EducationSection extends StatelessWidget {
           subtitle: 'EDUCATION',
             icon: Icons.school_outlined,
         ),
-        const SizedBox(
-          height: 30,
-        ),
+        const SizedBox(height: 16),
         ListView.separated(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),

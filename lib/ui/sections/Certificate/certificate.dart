@@ -85,7 +85,7 @@ class CertificationScreen extends StatelessWidget {
     ];
 
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -94,7 +94,7 @@ class CertificationScreen extends StatelessWidget {
             subtitle: 'CERTIFICATIONS',
             icon: Icons.verified_outlined,
       ),
-          const SizedBox(height: 40),
+          const SizedBox(height: 16),
           ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),

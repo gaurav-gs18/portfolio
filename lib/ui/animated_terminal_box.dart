@@ -14,24 +14,24 @@ class _TerminalBoxState extends State<TerminalBox> {
 
   final List<Map<String, dynamic>> _texts = [
     {
-      "text": "\$ echo Gaurav",
+      "text": "\$ echo \"Gaurav\"",
       "color": Colors.greenAccent,
       "fontSize": 16,
     },
     {
       "text":
-          "A Flutter Developer with strong interest in\nmobile and cross-platform applications.",
+          "Senior Software Developer crafting ideas\ninto reliable, production-ready applications.",
       "color": Colors.yellowAccent,
       "fontSize": 14,
     },
     {
       "text":
-          "[?] Specialized in state management,\nclean architecture, and scalable apps.",
+          "\n[+] From the first API call to deployment,\nI build scalable solutions and deliver\nquality from development to release.",
       "color": Colors.redAccent,
       "fontSize": 14,
     },
     {
-      "text": "\$",
+      "text": "\$ _",
       "color": Colors.white,
       "fontSize": 16,
     },

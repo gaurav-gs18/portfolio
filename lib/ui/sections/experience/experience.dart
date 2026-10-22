@@ -158,7 +158,7 @@ class _ExperienceSectionState extends State<ExperienceSection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -167,7 +167,7 @@ class _ExperienceSectionState extends State<ExperienceSection> {
             subtitle: 'WORK EXPERIENCE',
             icon: Icons.work_outline,
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 16),
 
           // Work Experience list
           ListView.separated(
@@ -214,7 +214,7 @@ class _ExperienceSectionState extends State<ExperienceSection> {
                 const Divider(color: Colors.white24),
           ),
 
-          const SizedBox(height: 40),
+          const SizedBox(height: 28),
 
           // Projects Section
           const SectionHeaderWidget(
@@ -222,7 +222,7 @@ class _ExperienceSectionState extends State<ExperienceSection> {
             subtitle: 'PROJECTS',
             icon: Icons.code,
           ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 16),
 
           ListView.builder(
             shrinkWrap: true,

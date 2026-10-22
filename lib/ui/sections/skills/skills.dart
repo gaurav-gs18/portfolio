@@ -10,11 +10,11 @@ class SkillsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final accentColor = Colors.tealAccent[400]!;
-    
+
     final categories = {
       "Programming": ["Dart", "Java", "Kotlin", "C++"],
-      "Frontend": ["Flutter", "Jetpack Compose", "XML"],
-      "Backend": ["Firebase", "Node.js", "Spring Boot"],
+      "Frontend": ["Flutter", "Angular", "Jetpack Compose", "XML"],
+      "Backend": [".NET", "Firebase", "Node.js", "Spring Boot"],
       "Databases": ["SQLite", "Hive", "PostgreSQL"],
       "DevOps": ["Git", "GitHub", "CI/CD"],
       "Cloud": ["Firebase Cloud", "AWS"],
@@ -29,7 +29,9 @@ class SkillsSection extends StatelessWidget {
       "Flutter": FontAwesomeIcons.mobile,
       "Jetpack Compose": FontAwesomeIcons.android,
       "XML": FontAwesomeIcons.fileCode,
+      "Angular": FontAwesomeIcons.angular,
       "Firebase": FontAwesomeIcons.fire,
+      ".NET": FontAwesomeIcons.microsoft,
       "Node.js": FontAwesomeIcons.nodeJs,
       "Spring Boot": FontAwesomeIcons.leaf,
       "SQLite": FontAwesomeIcons.database,
@@ -43,26 +45,26 @@ class SkillsSection extends StatelessWidget {
     };
 
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: DefaultTabController(
-      length: categories.keys.length,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SectionHeaderWidget(
-            title: '',
+        length: categories.keys.length,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SectionHeaderWidget(
+              title: '',
               subtitle: 'TECH STACKS',
               icon: Icons.build_circle_outlined,
-          ),
-            const SizedBox(height: 30),
+            ),
+            const SizedBox(height: 16),
 
-          // Tabs
-          TabBar(
-            isScrollable: true,
+            // Tabs
+            TabBar(
+              isScrollable: true,
               indicatorColor: accentColor,
               indicatorWeight: 3,
               labelColor: accentColor,
-            unselectedLabelColor: Colors.grey,
+              unselectedLabelColor: Colors.grey,
               labelStyle: TextStyle(
                 fontSize: Responsive.getBodySize(context),
                 fontWeight: FontWeight.w600,
@@ -71,34 +73,32 @@ class SkillsSection extends StatelessWidget {
                 fontSize: Responsive.getBodySize(context),
                 fontWeight: FontWeight.w400,
               ),
-            tabs: categories.keys.map((cat) => Tab(text: cat)).toList(),
-          ),
-            const SizedBox(height: 30),
+              tabs: categories.keys.map((cat) => Tab(text: cat)).toList(),
+            ),
+            const SizedBox(height: 16),
 
-          // Tab Views
-          SizedBox(
-              height: Responsive.isMobile(context) 
-                  ? 250 
-                  : Responsive.isTablet(context) 
-                      ? 280 
-                      : 200,
-            child: TabBarView(
-              children: categories.values.map((skills) {
+            // Selected tab grid, sized to its content
+            Builder(builder: (context) {
+              final controller = DefaultTabController.of(context);
+              return AnimatedBuilder(
+                animation: controller,
+                builder: (context, _) {
+                  final skills = categories.values.elementAt(controller.index);
                   return GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: Responsive.isMobile(context) 
-                          ? 2 
-                          : Responsive.isTablet(context) 
-                              ? 3 
+                      crossAxisCount: Responsive.isMobile(context)
+                          ? 2
+                          : Responsive.isTablet(context)
+                              ? 3
                               : 4,
                       crossAxisSpacing: Responsive.isMobile(context) ? 12 : 15,
                       mainAxisSpacing: Responsive.isMobile(context) ? 12 : 15,
-                      childAspectRatio: Responsive.isMobile(context) 
-                          ? 1.3 
-                          : Responsive.isTablet(context) 
-                              ? 1.4 
+                      childAspectRatio: Responsive.isMobile(context)
+                          ? 1.3
+                          : Responsive.isTablet(context)
+                              ? 1.4
                               : 1.8,
                     ),
                     itemCount: skills.length,
@@ -108,13 +108,13 @@ class SkillsSection extends StatelessWidget {
                         skill: skill,
                         icon: skillIcons[skill] ?? Icons.code,
                         accentColor: accentColor,
-                    );
+                      );
                     },
-                );
-              }).toList(),
-            ),
-          ),
-        ],
+                  );
+                },
+              );
+            }),
+          ],
         ),
       ),
     );
@@ -143,7 +143,7 @@ class _SkillCardState extends State<_SkillCard> {
   @override
   Widget build(BuildContext context) {
     final isHovered = _isHovered;
-    
+
     return MouseRegion(
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
@@ -185,10 +185,10 @@ class _SkillCardState extends State<_SkillCard> {
               child: Icon(
                 widget.icon,
                 color: widget.accentColor,
-                size: Responsive.isMobile(context) 
-                    ? 28 
-                    : Responsive.isTablet(context) 
-                        ? 30 
+                size: Responsive.isMobile(context)
+                    ? 28
+                    : Responsive.isTablet(context)
+                        ? 30
                         : 26,
               ),
             ),
@@ -196,14 +196,14 @@ class _SkillCardState extends State<_SkillCard> {
             Text(
               widget.skill,
               style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                color: isHovered ? widget.accentColor : Colors.white,
-                fontWeight: FontWeight.w600,
-                fontSize: Responsive.isMobile(context) 
-                    ? 14 
-                    : Responsive.isTablet(context) 
-                        ? 13 
-                        : 12,
-              ),
+                    color: isHovered ? widget.accentColor : Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: Responsive.isMobile(context)
+                        ? 14
+                        : Responsive.isTablet(context)
+                            ? 13
+                            : 12,
+                  ),
               textAlign: TextAlign.center,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,

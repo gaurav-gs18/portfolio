@@ -51,22 +51,22 @@ class _HomePageState extends State<HomePage> {
                       children: [
                   // About Section
                   const AboutSection(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 24),
 
                   // Experience Section
                         ExperienceSection(
                           experiences: _userData.experience,
                           projects: _userData.projects,
                         ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 24),
 
                   // Skills Section
                   const SkillsSection(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 24),
 
                   // Certificates Section
                   const CertificationScreen(),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 24),
 
                   // Education Section
                         EducationSection(
@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                             !edu.degree.toLowerCase().contains('12th')
                           ).toList(),
                         ),
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 24),
 
                   // Contact Section
                   const ContactSection(),

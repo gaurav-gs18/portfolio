@@ -14,7 +14,7 @@ class ContactSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final isMobile = MediaQuery.of(context).size.width < 800;
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -32,13 +32,13 @@ class ContactSection extends StatelessWidget {
           //         letterSpacing: 1.5,
           //       ),
           // ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 16),
 
           // Short Intro
           Text(
-            "I am a passionate Mobile App Developer with hands-on experience in building "
-            "user-friendly, efficient, and scalable applications. I focus on writing "
-            "clean, maintainable code and delivering high-quality results.",
+            "Have a product to build, an app to scale or a role to fill? I work across "
+            "Flutter, native Android and full-stack .NET, and I take features from idea "
+            "to production. Reach out and I'll get back to you within a day.",
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   fontSize: Responsive.getBodySize(context),
                   height: 1.5,
